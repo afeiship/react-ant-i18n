@@ -13,7 +13,8 @@ export default class extends Component {
   static propTypes = {
     className: PropTypes.string,
     value: PropTypes.string,
-    provider: PropTypes.func
+    provider: PropTypes.func,
+    i18nOptions: PropTypes.object
   };
 
   static defaultProps = {
@@ -36,6 +37,7 @@ export default class extends Component {
       children,
       value,
       provider,
+      i18nOptions,
       ...props
     } = this.props;
     const localeAntd = resources.antd[value];
@@ -47,7 +49,10 @@ export default class extends Component {
         locale={localeAntd}
         className={classNames(CLASS_NAME, className)}
         {...props}>
-        <ReactI18nProvider value={value} resources={resourcesI18n}>
+        <ReactI18nProvider
+          value={value}
+          resources={resourcesI18n}
+          i18nOptions={i18nOptions}>
           {children}
         </ReactI18nProvider>
       </AntdProvider>
