@@ -18,6 +18,8 @@ export default merge(baseConfig, {
     '@feizheng/noop': '@feizheng/noop',
     antd: 'antd',
     i18next: 'i18next',
+    'moment':'moment',
+    '@feizheng/next-kebab-case':'@feizheng/next-kebab-case',
     '@feizheng/react-i18next-provider': '@feizheng/react-i18next-provider'
   }),
   plugins: [plugins.clean(), plugins.copyStyles()]
